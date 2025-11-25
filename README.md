@@ -2,35 +2,44 @@
 # CMPUT 291 Project 2 - Fall 2025
 
 # GROUP INFORMATION
+
 Group member names and ccids (2-3 members)  
-  wpli, William Li  
-  mahir2, Mahir Islam  
-  ccid3, name2  
+
+- wpli, William Li  
+- mahir2, Mahir Islam  
+- ccid3, name2  
 
 # INSTRUCTIONS
-Python Environment Setup
+
+Python Environment Setup:
+
 1. Navigate to Project Directory
-bashcd CMPUT-291-Mini-Project-2
+    - `cd CMPUT-291-Mini-Project-2`
 2. Create Virtual Environment
-bashpython3 -m venv venv
+    - `python3 -m venv venv`
 3. Activate Virtual Environment
-macOS/Linux:
-bashsource venv/bin/activate
-Windows:
-bashvenv\Scripts\activate
+    - macOS/Linux: `source venv/bin/activate`
+    - Windows: `venv\Scripts\activate`
 4. Install Dependencies
-bashpip install pymongo
+    - `pip install pymongo`
 5. (Optional) Create requirements.txt
-bashpip freeze > requirements.txt
+    - `pip freeze > requirements.txt`
+
 For future installations:
-bashpip install -r requirements.txt
+`bashpip install -r requirements.txt`
 
 Running the Programs
 Phase 1: Loading Data into MongoDB
 Command Format
-bashpython3 load-json.py <json_filename> <port_number>
+
+```bash
+python3 load-json.py <json_filename> <port_number>
+```
+
 Example
-bashpython3 load-json.py chunk_1.json 27017
+
+```bash
+$ python3 load-json.py chunk_1.json 27017
 Expected Output
 Connecting to MongoDB on port 27017...
 Connected to database: 291db
@@ -43,46 +52,52 @@ Inserted 10000 documents...
 ✓ Successfully loaded 10000 documents into 'articles' collection
 ✓ Verification: Collection contains 10000 documents
 ✓ Database connection closed
-Notes
+```
+
+Notes:
 
 The program drops any existing articles collection before loading
 Data is inserted in batches of 5000 documents for efficiency
 Default port for MongoDB is 27017
 
-
 Phase 2: Querying the Database
-Command Format
-bashpython3 phase2_query.py <port_number>
-Example
-bashpython3 phase2_query.py 27017
-Available Operations
-1. Most Common Words by Media Type
 
-Input: Media type (news/blog, case-insensitive)
-Output: Top 5 most common words with frequency counts
-Includes ties at 5th position
+Command Format
+
+```bash
+python3 phase2_query.py <port_number>
+```
+
+Example
+
+```bash
+python3 phase2_query.py 27017
+```
+
+Available Operations
+
+1. Most Common Words by Media Type
+    - Input: Media type (news/blog, case-insensitive)
+    - Output: Top 5 most common words with frequency counts
+    - Includes ties at 5th position
 
 2. Article Count Difference Between News and Blogs
-
-Input: Date (YYYY-MM-DD or "Month Day, Year" format)
-Output: Number of news articles, blog articles, and comparison
-Example dates: 2015-09-07 or September 7, 2015
+    - Input: Date (YYYY-MM-DD or "Month Day, Year" format)
+    - Output: Number of news articles, blog articles, and comparison
+    - Example dates: 2015-09-07 or September 7, 2015
 
 3. Top 5 News Sources by Article Count (2015)
-
-Input: None
-Output: Top 5 sources that published most articles in 2015
-Includes percentage of total articles
+    - Input: None
+    - Output: Top 5 sources that published most articles in 2015
+    - Includes percentage of total articles
 
 4. 5 Most Recent Articles by Source
-
-Input: Source name (exact match)
-Output: Up to 5 most recent articles from that source
-Shows title and publication date
+    - Input: Source name (exact match)
+    - Output: Up to 5 most recent articles from that source
+    - Shows title and publication date
 
 5. Exit
-
-Closes database connection and exits program
+    - Closes database connection and exits program
 
 # Names of anyone you have collaborated with (as much as it is allowed within the course policy) or a line saying that you did not collaborate with anyone else.  
 
