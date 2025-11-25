@@ -7,7 +7,6 @@ Group member names and ccids (2-3 members)
 
 - wpli, William Li  
 - mahir2, Mahir Islam  
-- ccid3, name2  
 
 # INSTRUCTIONS
 
